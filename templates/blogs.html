@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Galaxy Blogs</title>
+    <style media="screen">
+      body {
+        background: green;
+			}
+      h1{
+        font-size : 50px;
+        text-align: center;
+      }
+			div#blogList {
+        background: indigo;
+        border-width: thick;
+        border-style: solid;
+        border-color: #007e7e;
+        width: 100px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        margin-left: 20px;
+        text-align: center;
+        float: right;
+      }
+      div#blogDetail {
+        position: absolute;
+        top: 125px;
+        color: rgb(83, 175, 19);
+        width: 1200px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        margin-left: 20px;
+        text-align: left;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color:Yellow;">Galaxy Blogs</h1>
+    <div id="blogList">
+      <h2 style="color: blue;">All Blogs</h2>
+      {%for blog in blogs%}
+        <p style="color: white;"><strong>{{blog.title}}</strong><br></p>
+        {% endfor %}
+    </div>
+    <div id="blogDetail">
+      {%for blog in blogs%}
+        <p style="color: Yellow;"><strong>{{blog.title}}</strong><br></p>
+        <p style="color: White;">{{ blog.body}}<br></p>
+        <br>
+        {% endfor %}
+    </div>
+  </body>
+</html>
